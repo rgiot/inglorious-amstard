@@ -1,0 +1,64 @@
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 3.
+
+\mode<presentation>
+
+\newif\ifbeamer@secheader
+\beamer@secheaderfalse
+
+\DeclareOptionBeamer{secheader}{\beamer@secheadertrue}
+\ProcessOptionsBeamer
+
+\useoutertheme{bunsen}
+
+% color definitions:
+\definecolor{base03}{RGB}{0,43,54}
+\definecolor{base02}{RGB}{7,54,66}
+\definecolor{base01}{RGB}{88,110,117}
+\definecolor{base00}{RGB}{101,123,131}
+\definecolor{base0}{RGB}{131,148,150}
+\definecolor{base1}{RGB}{147,161,161}
+\definecolor{base2}{RGB}{238,232,213}
+\definecolor{base3}{RGB}{253,246,227}
+\definecolor{yellow}{RGB}{181,137, 0}
+\definecolor{orange}{RGB}{203,75,22}
+\definecolor{red}{RGB}{220,50,47}
+\definecolor{magenta}{RGB}{211,54,130}
+\definecolor{violet}{RGB}{108,113,196}
+\definecolor{blue}{RGB}{38,139,210}
+\definecolor{cyan}{RGB}{42,161,152}
+\definecolor{green}{RGB}{133,153,0}
+
+% set the title color
+\setbeamercolor{title}{fg=base03}
+
+% set colors for specific elements
+\setbeamercolor{normal text}{fg=base00, bg=base3}
+\setbeamercolor{background canvas}{bg=base3}
+\setbeamercolor{alerted text}{fg=red}
+\setbeamercolor{example text}{fg=green}
+\setbeamercolor{structure}{fg=orange}
+\setbeamercolor{block}{fg=yellow, bg=base2}
+\setbeamercolor{block title}{fg=yellow, bg=base2} % adjust title color to poppy
+\setbeamercolor{block item}{fg=yellow, bg=base2}
+\setbeamercolor{itemize item}{fg=yellow, bg=base2} % adjusts the bullet color
+
+% frame title styling
+\setbeamertemplate{frametitle}{\vspace{0.4cm} \color{base01}
+\insertframetitle}% \hfill \includegraphics[width=.1\linewidth]{imgs/Amstrad_CPC_6128.png}}
+
+\usesubitemizeitemtemplate{%
+    \tiny\raise1.5pt\hbox{\color{beamerstructure}$\blacktriangleright$}%
+}
+\usesubsubitemizeitemtemplate{%
+    \tiny\raise1.5pt\hbox{\color{beamerstructure}$\bigstar$}%
+}
+
+
+\setbeamersize{text margin left=1em,text margin right=1em}
+\setbeamersize{frametitle=\huge}
+
+\ifbeamer@secheader\else\setbeamertemplate{headline}[default]\fi
+
+\mode
+<all>
